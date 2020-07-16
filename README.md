@@ -1,4 +1,4 @@
-# GardenRails
+# Garden Rails
 
 Generate YARD docs for the parts of your Rails project that intellisense tools normally struggle with (ActiveModel attributes and associations). This project was started with the intention of helping [Solargraph](https://solargraph.org) to work better with Rails.
 
