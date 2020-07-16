@@ -1,8 +1,8 @@
 # GardenRails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/garden_rails`. To experiment with that code, run `bin/console` for an interactive prompt.
+Generate YARD docs for the parts of your Rails project that intellisense tools normally struggle with (ActiveModel attributes and associations). This project was started with the intention of helping [Solargraph](https://solargraph.org) to work better with Rails.
 
-TODO: Delete this and the text above, and describe your gem
+Acknowledgement: this project is heavily influenced by https://gist.github.com/hellola/b832cff599f67a5e353e6af4914d467a
 
 ## Installation
 
@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run `rake garden_rails:generate`
+
+This will generate one file for each of your models in config/yard (TODO: make this configurable) with YARD directives describing their attributes and associations.
 
 ## Development
 
@@ -32,7 +34,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Fritzinger/garden_rails.
+Bug reports and pull requests are welcome on GitHub at https://github.com/iftheshoefritz/garden_rails.
 
 ## License
 
