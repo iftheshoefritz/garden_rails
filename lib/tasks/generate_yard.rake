@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'fileutils'
+
 namespace :garden_rails do
   desc 'Generate YARD docs for model attributes and associations'
   task generate: :environment do
@@ -9,7 +11,11 @@ namespace :garden_rails do
     # TODO: make this configurable
     gen_directory = Rails.root.join("config", "yard")
 
-    Rails.application.eager_load!
+    FileUtils.mkdir_p gen_directory
+
+    Rails.application.eager_load! unless Rails.application.config.cache_classes
+    Zeitwerk::Loader.eager_load_all if defined?(Zeitwerk)
+
     models = ApplicationRecord.descendants
     puts("generating for #{models.count} models")
 
