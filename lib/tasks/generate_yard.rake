@@ -2,7 +2,7 @@
 
 namespace :garden_rails do
   desc 'Generate YARD docs for model attributes and associations'
-  task :generate do
+  task generate: :environment do
     # Add the folder you choose in your config/application.rb
     # example:
     # config.autoload_paths << Rails.root.join('app/solargraph')
